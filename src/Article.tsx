@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
-import { confirmAlert } from 'react-confirm-alert';
+import {confirmAlert} from 'react-confirm-alert';
 import Button from 'react-bootstrap/Button'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container';
+import Comments from './Comments';
 import {requestArticleByID, saveArticle, unsaveArticle, isArticleSaved} from './API';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -52,10 +53,10 @@ function Article() {
     }, []);
 
 
-    function onClickSaveArticle (element: React.MouseEvent, id: number) {
+    function onClickSaveArticle(element: React.MouseEvent, id: number) {
         if (buttonStatus.saved) {
             confirmAlert({
-                title: 'Трги од зачувани',
+                title: 'Тргни од зачувани',
                 message: 'Дали сте сигурни?',
                 buttons: [
                     {
@@ -109,10 +110,11 @@ function Article() {
                         }
                     </Card.Body>
                 </Card>
+                <Comments articleID={article.id}/>
             </Container>
         );
     } else {
-        return <h1>Article not found!</h1>
+        return <Container className='mt-2'><h1>Article not found!</h1></Container>
     }
 }
 
@@ -121,7 +123,7 @@ interface ArticleParagraphProp {
 }
 
 function ArticleParagraph(prop: ArticleParagraphProp) {
-    if (prop.text === "") {
+    if (prop.text === '') {
         return <></>
     } else {
         return (

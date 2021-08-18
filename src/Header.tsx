@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import './Header.css'
 
 function Header() {
     return (
@@ -20,11 +21,17 @@ function Header() {
                 <Navbar.Toggle aria-controls='basic-navbar-nav'/>
                 <Navbar.Collapse id='basic-navbar-nav'>
                     <Nav className='me-auto'></Nav>
+                    <Nav className='me-auto'>
+                        <Search/>
+                    </Nav>
                     <Nav>
                         <Link to='/saved-articles' className='me-2'>
                             <Button variant='secondary'>Прегледај зачувани објави</Button>
                         </Link>
-                        <Search/>
+                        <Nav.Link className='text-white'>
+                            <i className="bi bi-person-circle"></i> <span
+                            className='text-decoration-underline'>Мартин</span>
+                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -35,8 +42,8 @@ function Header() {
 function Search() {
     return (
         <Form.Group className='d-flex flex-row'>
-            <Form.Control type='search' placeholder='Пребарај...' className='me-1'/>
-            <Button type='submit' variant='outline-success'>
+            <Form.Control type='search' placeholder='Пребарај...' className='rounded-left'/>
+            <Button type='submit' variant='secondary' className='rounded-right'>
                 <i className="bi bi-search"></i>
             </Button>
         </Form.Group>

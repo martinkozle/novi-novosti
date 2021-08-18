@@ -52,3 +52,19 @@ export function isArticleSaved(articleID: number) {
     // check if article is saved in local storage
     return requestSavedArticles().includes(articleID);
 }
+
+export function requestCommentsByArticleID(articleID: number) {
+    // request comments from an article from local storage
+    const commentsString = localStorage.getItem(`comments-${articleID}`);
+    if (commentsString) {
+        return JSON.parse(commentsString)['comments'];
+    }
+    return [];
+}
+
+export function saveComment(articleID: number, comment: Object) {
+    // save comment to local storage
+    const comments = requestCommentsByArticleID(articleID);
+    const newComments = [comment, ...comments];
+    localStorage.setItem(`comments-${articleID}`, JSON.stringify({comments: newComments}));
+}
