@@ -13,19 +13,17 @@ function Header() {
         <Navbar bg='dark' expand='lg'>
             <Container>
                 <Navbar.Brand className='btn-group'>
-                    <Link to='/'>
-                        <Button className='bg-secondary rounded-2 btn btn-secondary text-start'>
-                            <h1 className='header'>Нови Новости</h1>
-                        </Button>
+                    <Link to='/' className='bg-secondary rounded-2 btn btn-secondary text-start'>
+                        <h1 className='header'>Нови Новости</h1>
                     </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls='basic-navbar-nav'/>
                 <Navbar.Collapse id='basic-navbar-nav'>
                     <Nav className='me-auto'></Nav>
                     <Nav>
-                        <Nav.Link href='#' className='bg-secondary text-white rounded me-2'>
-                            Прегледај зачувани објави
-                        </Nav.Link>
+                        <Link to='/saved-articles' className='me-2'>
+                            <Button variant='secondary'>Прегледај зачувани објави</Button>
+                        </Link>
                         <Search/>
                     </Nav>
                 </Navbar.Collapse>
