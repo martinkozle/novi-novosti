@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/novi-novosti/static/css/main.7708884f.chunk.css",
-    "main.js": "/novi-novosti/static/js/main.3af6c548.chunk.js",
-    "main.js.map": "/novi-novosti/static/js/main.3af6c548.chunk.js.map",
+    "main.js": "/novi-novosti/static/js/main.84cee3e6.chunk.js",
+    "main.js.map": "/novi-novosti/static/js/main.84cee3e6.chunk.js.map",
     "runtime-main.js": "/novi-novosti/static/js/runtime-main.170d6a3b.js",
     "runtime-main.js.map": "/novi-novosti/static/js/runtime-main.170d6a3b.js.map",
     "static/css/2.9ce91bd6.chunk.css": "/novi-novosti/static/css/2.9ce91bd6.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.9ce91bd6.chunk.css",
     "static/js/2.4fcc686e.chunk.js",
     "static/css/main.7708884f.chunk.css",
-    "static/js/main.3af6c548.chunk.js"
+    "static/js/main.84cee3e6.chunk.js"
   ]
 }
