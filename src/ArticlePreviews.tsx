@@ -44,6 +44,11 @@ function SavedArticlePreviews() {
     );
 }
 
+function parseDate(date: string) {
+    const [dd, mm, yyyy] = date.split('.');
+    return new Date(+yyyy, +mm - 1, +dd).getTime();
+}
+
 function ArticlePreviews(props: ArticlePreviewsProp) {
     const [shownArticles, setArticles] = useState<ArticlePreviewProp[]>([]);
 
@@ -53,7 +58,9 @@ function ArticlePreviews(props: ArticlePreviewsProp) {
 
     let articlePreviewElements;
     if (shownArticles.length > 0) {
-        articlePreviewElements = shownArticles.map(
+        articlePreviewElements = shownArticles.sort(
+            (article1, article2) => parseDate(article1.time) - parseDate(article2.time)
+        ).reverse().map(
             article => {
                 return (
                     <ArticlePreview key={article.id} id={article.id} title={article.title}
