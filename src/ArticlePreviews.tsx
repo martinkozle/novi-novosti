@@ -82,14 +82,14 @@ function ArticlePreviews(props: ArticlePreviewsProp) {
 function ArticlePreview(props: ArticlePreviewProp) {
     return (
         <div className='border border-rounded bg-light mx-2 my-4 p-2'>
-            <Link to={`/article/${props.id}`} className='text-decoration-none text-black'>
+            <Link to={`${process.env.PUBLIC_URL}/article/${props.id}`} className='text-decoration-none text-black'>
                 <h2 className='header'>
                     {props.title}
                 </h2>
             </Link>
             <Nav>
                 <small className='text-muted me-auto'>Објавено на {props.time}</small>
-                <Link to={`/article/${props.id}`}>
+                <Link to={`${process.env.PUBLIC_URL}/article/${props.id}`}>
                     <Button>Прочитај повеќе...</Button>
                 </Link>
             </Nav>

@@ -52,7 +52,7 @@ function CategoriesNavbar() {
 
 function CategoryButton(props: CategoryButtonProp) {
     return (
-        <Link to={`/category/${props.category}`}
+        <Link to={`${process.env.PUBLIC_URL}/category/${props.category}`}
               className={`text-decoration-none nav-link rounded me-2 ${props.buttonClass} text-white text-center`}>
             {props.category}
         </Link>

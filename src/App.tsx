@@ -12,18 +12,18 @@ function App() {
             <Router>
                 <Header/>
                 <Switch>
-                    <Route exact path='/'>
-                        <Redirect to='/category/Ново'/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/`}>
+                        <Redirect to={`${process.env.PUBLIC_URL}/category/Ново`}/>
                     </Route>
-                    <Route exact path='/category/:categoryName'>
+                    <Route exact path={`${process.env.PUBLIC_URL}/category/:categoryName`}>
                         <CategoriesNavbar/>
                         <CategoryArticlePreviews/>
                     </Route>
-                    <Route exact path='/article/:id'>
+                    <Route exact path={`${process.env.PUBLIC_URL}/article/:id`}>
                         <CategoriesNavbar/>
                         <Article/>
                     </Route>
-                    <Route exact path='/saved-articles'>
+                    <Route exact path={`${process.env.PUBLIC_URL}/saved-articles`}>
                         <SavedArticlePreviews/>
                     </Route>
                 </Switch>

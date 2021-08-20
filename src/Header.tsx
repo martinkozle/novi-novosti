@@ -17,7 +17,7 @@ function Header() {
             <BackButton/>
             <Container className='ms-auto'>
                 <Navbar.Brand className='btn-group'>
-                    <Link to='/' className='bg-secondary rounded-2 btn btn-secondary text-start'>
+                    <Link to={`${process.env.PUBLIC_URL}/`} className='bg-secondary rounded-2 btn btn-secondary text-start'>
                         <h1 className='header'>Нови Новости</h1>
                     </Link>
                 </Navbar.Brand>
@@ -28,7 +28,7 @@ function Header() {
                         <Search/>
                     </Nav>
                     <Nav>
-                        <Link to='/saved-articles' className='me-2'>
+                        <Link to={`${process.env.PUBLIC_URL}/saved-articles`} className='me-2'>
                             <Button variant='secondary'>Прегледај зачувани објави</Button>
                         </Link>
                         <Nav.Link className='text-white'>
