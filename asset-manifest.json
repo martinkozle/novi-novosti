@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/novi-novosti/static/css/main.7708884f.chunk.css",
+    "main.js": "/novi-novosti/static/js/main.b08e0372.chunk.js",
+    "main.js.map": "/novi-novosti/static/js/main.b08e0372.chunk.js.map",
+    "runtime-main.js": "/novi-novosti/static/js/runtime-main.170d6a3b.js",
+    "runtime-main.js.map": "/novi-novosti/static/js/runtime-main.170d6a3b.js.map",
+    "static/css/2.9ce91bd6.chunk.css": "/novi-novosti/static/css/2.9ce91bd6.chunk.css",
+    "static/js/2.4fcc686e.chunk.js": "/novi-novosti/static/js/2.4fcc686e.chunk.js",
+    "static/js/2.4fcc686e.chunk.js.map": "/novi-novosti/static/js/2.4fcc686e.chunk.js.map",
+    "index.html": "/novi-novosti/index.html",
+    "static/css/2.9ce91bd6.chunk.css.map": "/novi-novosti/static/css/2.9ce91bd6.chunk.css.map",
+    "static/css/main.7708884f.chunk.css.map": "/novi-novosti/static/css/main.7708884f.chunk.css.map",
+    "static/js/2.4fcc686e.chunk.js.LICENSE.txt": "/novi-novosti/static/js/2.4fcc686e.chunk.js.LICENSE.txt",
+    "static/media/bootstrap-icons.css": "/novi-novosti/static/media/bootstrap-icons.dfd0ea12.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.170d6a3b.js",
+    "static/css/2.9ce91bd6.chunk.css",
+    "static/js/2.4fcc686e.chunk.js",
+    "static/css/main.7708884f.chunk.css",
+    "static/js/main.b08e0372.chunk.js"
+  ]
+}
