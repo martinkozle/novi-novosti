@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import categories from './data/categories.json';
+import {requestCategories} from './API';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -18,12 +18,19 @@ interface CategoryButtonProp {
 
 function CategoriesNavbar() {
     const {categoryName} = useParams<CategoriesNavbarParams>();
+    const [shownCategories, setCategories] = useState<string[]>([]);
+
+    useEffect(() => {
+        const categories = requestCategories();
+        setCategories(categories);
+    }, []);
+
     return (
-        <Navbar bg='light' expand='lg'>
+        <Navbar bg='light' expand='lg' className='mb-2'>
             <Container>
                 <Nav className='me-auto'>
                     {
-                        categories.categories.map(
+                        shownCategories.map(
                             category => {
                                 if (category === categoryName) {
                                     return (

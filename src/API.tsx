@@ -1,6 +1,11 @@
 // this file contains mock requests to local json files and browser local storage
 import articles from './data/articles.json';
+import categories from './data/categories.json';
 
+
+export function requestCategories() {
+    return categories.categories;
+}
 
 export function requestArticlePreviewByID(articleID: number) {
     // return mock article preview

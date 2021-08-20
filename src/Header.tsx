@@ -1,18 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import Container from 'react-bootstrap/Container'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import BackButton from './BackButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import './Header.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './Header.css';
+
 
 function Header() {
     return (
-        <Navbar bg='dark' expand='lg'>
-            <Container>
+        <Navbar bg='dark' expand='lg' className='sticky-top'>
+            <BackButton/>
+            <Container className='ms-auto'>
                 <Navbar.Brand className='btn-group'>
                     <Link to='/' className='bg-secondary rounded-2 btn btn-secondary text-start'>
                         <h1 className='header'>Нови Новости</h1>

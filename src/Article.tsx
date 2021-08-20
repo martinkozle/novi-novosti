@@ -1,16 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {confirmAlert} from 'react-confirm-alert';
-import Button from 'react-bootstrap/Button'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Comments from './Comments';
+import BackButton from './BackButton';
 import {requestArticleByID, saveArticle, unsaveArticle, isArticleSaved} from './API';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 interface ArticleParams {
     id: string
@@ -50,10 +51,10 @@ function Article() {
         } else {
             setButtonStatus(BUTTON_STATUS_NOT_SAVED);
         }
-    }, []);
+    }, [article]);
 
 
-    function onClickSaveArticle(element: React.MouseEvent, id: number) {
+    function toggleSaveArticle(id: number) {
         if (buttonStatus.saved) {
             confirmAlert({
                 title: 'Тргни од зачувани',
@@ -81,6 +82,7 @@ function Article() {
     if (article) {
         return (
             <Container className='mt-2'>
+                <BackButton/>
                 <Card key={article.id}>
                     <Card.Body>
                         <Card.Title className='fs-2'>{article.title}</Card.Title>
@@ -96,7 +98,7 @@ function Article() {
                             </Nav>
                             <Nav>
                                 <Button variant={buttonStatus.variant}
-                                        onClick={element => onClickSaveArticle(element, article.id)}>{buttonStatus.innerText}</Button>
+                                        onClick={element => toggleSaveArticle(article.id)}>{buttonStatus.innerText}</Button>
                             </Nav>
                         </Navbar>
                         <small className='text-muted'>Објавено на {article.time}</small>
